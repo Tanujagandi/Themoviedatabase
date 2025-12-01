@@ -1,32 +1,47 @@
-/* ---------- PAGE BACKGROUND ---------- */
+/* ---------------- GLOBAL FONT (MATCH HOME PAGE) ---------------- */
+:root {
+  --font-home: "Times New Roman", serif;
+}
+ 
+/* ---------------- PAGE BACKGROUND ---------------- */
 .page {
   background-color: #0a0a0a;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 40px 0; /* same as home */
   color: #fff;
-  box-sizing: border-box;
+  font-family: var(--font-home);
 }
  
-/* ---------- SECTION TITLE ---------- */
+/* ---------------- CONTAINER (EXACT SAME AS HOME PAGE) ---------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;   /* same horizontal spacing as home */
+  font-family: var(--font-home);
+}
+ 
+/* ---------------- SECTION TITLE ---------------- */
 .sectionTitle {
   font-size: 32px;
-  margin: 0 auto 30px;
-  text-align: center;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-home);
 }
  
-/* ---------- MOVIES GRID ---------- */
+/* ---------------- MOVIES GRID (5 CARDS PER ROW) ---------------- */
 .moviesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);  /* EXACTLY like home */
+  gap: 22px;
   padding: 10px 0;
-  justify-items: center;
+  font-family: var(--font-home);
 }
  
-/* ---------- MOVIE CARD ---------- */
+/* ---------------- MOVIE CARD ---------------- */
 .movieCard {
   background: #111;
   border-radius: 12px;
@@ -34,8 +49,7 @@
   box-shadow: 0 5px 18px rgba(0,0,0,0.4);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-  max-width: 230px;
+  font-family: var(--font-home);
 }
  
 .movieCard:hover {
@@ -45,46 +59,57 @@
  
 .movieImage {
   width: 100%;
-  height: 330px;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
  
+/* ---------------- CARD CONTENT ---------------- */
 .cardContent {
   padding: 12px 10px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+  background: rgba(0,0,0,0.25);
+  font-family: var(--font-home);
 }
  
 .cardContent h3 {
-  margin: 4px 0;
+  margin: 6px 0;
   color: #fff;
   font-size: 1.1rem;
+  font-family: var(--font-home);
 }
  
 .cardContent p {
+  margin: 6px 0;
+  font-size: 0.85rem;
   color: #ccc;
-  font-size: 0.9rem;
-  margin: 6px 0 8px;
+  font-family: var(--font-home);
 }
  
-/* responsive tweaks */
-@media (max-width: 900px) {
-  .movieImage {
-    height: 300px;
-  }
+/* ---------------- RESPONSIVE LAYOUT ---------------- */
+@media (max-width: 1024px) {
   .moviesGrid {
-    gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+ 
+@media (max-width: 768px) {
+  .moviesGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
  
 @media (max-width: 520px) {
+  .moviesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
   .movieImage {
     height: 220px;
   }
+ 
   .sectionTitle {
     font-size: 24px;
   }
 }
- 
  

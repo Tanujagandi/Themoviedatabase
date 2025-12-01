@@ -1,3 +1,4 @@
+// src/pages/Auth/Auth.jsx
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Auth.module.css";
@@ -42,6 +43,8 @@ export default function Auth() {
     setLoading(true);
     try {
       const user = login({ identity: identity.trim(), password });
+      // Show alert on successful login
+      alert("Login successful! Redirecting...");
       // after login, redirect back to requested page (from) or home
       navigate(from, { replace: true });
     } catch (err) {
@@ -65,7 +68,9 @@ export default function Auth() {
     setLoading(true);
     try {
       const user = signup({ username: username.trim(), email: email.trim(), password });
-      // after signup, redirect back to requested page
+      // Show alert on successful signup
+      alert("Account created successfully! You are now logged in. Redirecting...");
+      // after signup, redirect back to requested page (from) or home
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.message || "Unable to sign up");
@@ -177,3 +182,4 @@ export default function Auth() {
     </div>
   );
 }
+ 

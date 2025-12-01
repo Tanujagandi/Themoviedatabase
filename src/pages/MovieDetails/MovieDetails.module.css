@@ -1,0 +1,228 @@
+
+.page {
+  padding: 26px 18px;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  font-family: inherit;
+}
+ 
+/* HEADER SECTION */
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+ 
+/* main poster */
+.poster {
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(255,255,255,0.04);
+  object-fit: cover;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+ 
+/* info */
+.info {
+  flex: 1;
+  min-width: 260px;
+}
+ 
+.title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #ffffff;
+  line-height: 1.05;
+}
+ 
+.meta {
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+  opacity: 0.85;
+  color: #dcdcdc;
+}
+ 
+.tagline {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  color: #e6e6e6;
+}
+ 
+.actions { margin-top: 12px; }
+ 
+.watchBtn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #e50914;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 150ms ease;
+}
+ 
+.watchBtn:hover { transform: translateY(-2px); background: #b10710; }
+ 
+/* NAV TABS */
+.tabs {
+  display: flex;
+  gap: 18px;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+ 
+.tab, .tabActive {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #bdbdbd;
+  text-decoration: none;
+  padding-bottom: 6px;
+}
+ 
+.tabActive { color: #fff; border-bottom: 3px solid #e50914; }
+ 
+/* OUTLET */
+.outlet { margin-bottom: 28px; }
+ 
+/* OVERVIEW */
+.overview { line-height: 1.6; color: #e6e6e6; }
+.overviewText { margin-bottom: 16px; }
+ 
+/* COMMON CARD STYLES (SIMILAR + CAST) */
+.posterBox {
+  width: 100%;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+}
+ 
+.similarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+ 
+/* visible placeholder when no remote poster exists - light tile so name readable */
+.emptyPoster {
+  width: 88%;
+  height: 88%;
+  background: linear-gradient(180deg, #ffffff, #e9e9e9);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-weight: 700;
+  font-size: 13px;
+}
+ 
+/* title under posters */
+.similarTitleText {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.15;
+  min-height: 2.4rem; /* reserve vertical space */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+/* CAST SECTION */
+.castSection { margin-top: 20px; }
+.subheading { font-size: 1.25rem; margin-bottom: 12px; color: #fff; }
+ 
+/* grid for cast (same visual style as similarGrid) */
+.castGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+ 
+.castCard { text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.castText { text-align: center; }
+.castImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.actorName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.characterName {
+  font-size: 0.85rem;
+  color: #d7d7d7;
+  opacity: 0.9;
+}
+ 
+/* fallback names-only style */
+.castGridNames { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 14px; }
+.castNameOnly {
+  background: rgba(255,255,255,0.03);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  color: #fff;
+}
+ 
+/* REVIEWS */
+.reviews { display:flex; flex-direction:column; gap: 16px; }
+.reviewCard { background: #0f0f0f; padding: 14px; border-radius: 8px; border: 1px solid #222; }
+.reviewHeader { display:flex; justify-content:space-between; margin-bottom: 10px; }
+.reviewDate { font-size: 0.85rem; opacity: 0.75; color: #ddd; }
+.reviewContent { line-height: 1.6; color: #e9e9e9; }
+ 
+/* SIMILAR MOVIES */
+.similarSection { margin-top: 28px; }
+.similarTitle { font-size: 1.2rem; margin-bottom: 12px; color: #fff; }
+.similarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+ 
+/* card */
+.similarCard {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+/* responsive tweaks */
+@media (max-width: 520px) {
+  .poster { width: 160px; }
+  .posterBox { height: 170px; }
+  .similarTitleText { font-size: 0.85rem; min-height: 2.2rem; }
+  .castGrid, .similarGrid { gap: 12px; }
+}
+ 
+/* status */
+.loading, .error, .noData { text-align:center; margin-top:18px; opacity:0.85; }
+.error { color: #ff5a5a; }
+ 
