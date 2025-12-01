@@ -1,0 +1,90 @@
+/* ---------- PAGE BACKGROUND ---------- */
+.page {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #fff;
+  box-sizing: border-box;
+}
+ 
+/* ---------- SECTION TITLE ---------- */
+.sectionTitle {
+  font-size: 32px;
+  margin: 0 auto 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+ 
+/* ---------- MOVIES GRID ---------- */
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 10px 0;
+  justify-items: center;
+}
+ 
+/* ---------- MOVIE CARD ---------- */
+.movieCard {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 230px;
+}
+ 
+.movieCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.55);
+}
+ 
+.movieImage {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+ 
+.cardContent {
+  padding: 12px 10px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+}
+ 
+.cardContent h3 {
+  margin: 4px 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+ 
+.cardContent p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 6px 0 8px;
+}
+ 
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .movieImage {
+    height: 300px;
+  }
+  .moviesGrid {
+    gap: 18px;
+  }
+}
+ 
+@media (max-width: 520px) {
+  .movieImage {
+    height: 220px;
+  }
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+ 
+ 

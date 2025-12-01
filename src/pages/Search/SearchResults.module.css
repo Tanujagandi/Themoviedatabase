@@ -1,0 +1,16 @@
+.container {
+  padding: 30px;
+}
+ 
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+ 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;         
+  margin-top: 20px;
+}

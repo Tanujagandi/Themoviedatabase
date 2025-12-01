@@ -1,0 +1,138 @@
+ 
+/* ---------- HERO ---------- */
+.hero {
+  height: 70vh; 
+  width: 100%;
+  
+  background-image: url(../../assets/netflix2.jpg);
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+ 
+/* dark overlay (visual only) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65));
+  backdrop-filter: blur(2px);
+  pointer-events: none; /* allow clicks to pass through */
+  z-index: 1;
+}
+ 
+/* hero content (text + cta) */
+.content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 1100px;
+}
+ 
+/* inner wrapper for title/subtitle/cta */
+.inner {
+  display: inline-block;
+  text-align: center;
+}
+ 
+/* headline */
+.title {
+  font-size: clamp(34px, 6vw, 64px);
+  margin: 0 0 12px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+ 
+/* supporting sentence */
+.subtitle {
+  font-size: clamp(14px, 2vw, 20px);
+  margin: 0 0 22px;
+  color: #e6e6e6;
+  opacity: 0.95;
+}
+ 
+/* CTA button */
+.exploreBtn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 12px 28px;
+  background: linear-gradient(180deg, #ff4b4b 0%, #e20d0d 100%);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 8px 20px rgba(226, 13, 13, 0.18);
+  border: none;
+  cursor: pointer;
+}
+ 
+.exploreBtn:hover,
+.exploreBtn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(226, 13, 13, 0.26);
+  background: linear-gradient(180deg, #d93a3a 0%, #b20710 100%);
+}
+ 
+/* small screens: reduce sizes */
+@media (max-width: 520px) {
+  .title { font-size: clamp(26px, 7vw, 36px); }
+  .subtitle { font-size: 14px; margin-bottom: 18px; }
+  .exploreBtn { padding: 10px 20px; font-size: 0.95rem; }
+}
+ 
+/* ---------- TRENDING SECTION ---------- */
+.trendingSection {
+  padding: 40px 20px;
+  background-color: #0a0a0a;
+  color: white;
+}
+ 
+.sectionTitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+/* clean responsive grid for movie cards */
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;               /* spacing between cards */
+  padding: 10px 0;
+  width: 100%;
+  justify-items: center;   /* center each card */
+}
+ 
+/* a subtle container wrapper if needed */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+ 
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+ 
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
