@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+A Netflix style React movie app with login ,TMDB API integration,local authentication  and responsive design.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Project Structure
+src/
+├── api/                # TMDB API calls
+├── assets/             # Images and fallback posters
+├── components/         # Navbar, Footer, Loader, Modals
+├── pages/
+│    ├── Home/          # Home page UI and trending movies
+│    ├── Movies/        # Infinite scroll movie listing
+│    ├── Auth/          # Login and Signup pages
+│    ├── MovieDetails/  # Overview, Cast, Reviews, Similar movies
+├── utils/              # Local authentication helper functions
+├── App.js              # Main routing file
+└── index.js            # Application entry point
 
-## Available Scripts
+ 
+##  Project Features
+ 
+- 🎥 **Trending Movies** — Browse latest trending films via TMDB  
+- 🔍 **Movie Search** — Search movies with pagination  
+- ♾️ **Infinite Scroll** — Auto-loading movies as you scroll  
+- 🎞️ **Movie Details Page**  
+  - Overview  
+  - Cast  
+  - Reviews  
+  - Similar Movies  
+- 🔐 **Authentication (Local)**  
+  - Login (email/username)  
+  - Signup  
+  - Error handling  
+- 🔏 **Protected Routes** — `/movies`, `/watch/:id`, `/search` accessible only after login  
+- 🖼️ **Fallback Images** for missing posters  
+- 📱 **Fully Responsive UI**  
+- ⚡ **Clean File Structure & Modular Components**  
+ 
+## 🔧 Environment Variables 
+ 
+Create a `.env` file in the project root:
 
-In the project directory, you can run:
+REACT_APP_TMDB_API_KEY=your_api_key_here
+(Use your actual TMDB key locally --do not commit it)
 
-### `npm start`
+##  Clone the Repository
+git clone https://github.com/tanujagandi/themoviedatabase.git
+cd themoviedatabase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Install Dependencies 
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Build the Project
+npm run build
+This will create a **production-ready build** inside the `/build` folder.
+ 
+##  Run Development Server
+npm start
+Runs at : http://localhost:3000
 
-### `npm test`
+##  Run Tests
+npm test
+Runs unit tests and shows coverage.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##  summary
+This project demonstrates:
+ 
+- React fundamentals  
+- API integration  
+- Routing & navigation  
+- Authentication  
+- Component structuring  
+- Deployment-ready build
+ 
