@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import * as tmdb from "../../api/tmdb"; // expects fetchMovieCredits or fetchMovieCast
 import styles from "./MovieDetails.module.css";
-import fallbackPoster from "../../assets/fallback2.jpg"; // <-- use fallback2 here
+import fallbackPoster from "../../assets/fallback2.jpg"; 
  
 const TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w185";
  

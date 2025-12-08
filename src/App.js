@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Loader from "./components/Loader";
 import ErrorBoundary from "./components/ErrorBoundary";
-import Footer from "./components/Footer";   // <-- ADD THIS
+import Footer from "./components/Footer";   
  
 import Home from "./pages/Home/Home";
 import Movies from "./pages/Movies/Movies";
@@ -79,7 +79,7 @@ function App() {
         </Suspense>
       </ErrorBoundary>
  
-      <Footer />  {/* ✅ FOOTER ALWAYS AT BOTTOM */}
+      <Footer />  
     </Router>
   );
 }

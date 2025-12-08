@@ -36,15 +36,20 @@ export default function Auth() {
   const onLogin = (e) => {
     e.preventDefault();
     setError("");
+ 
     if (!identity.trim() || !password) {
       setError("Please enter your email/username and password.");
       return;
     }
+ 
     setLoading(true);
     try {
-      const user = login({ identity: identity.trim(), password });
+      // perform login (no need to store return value in a variable)
+      login({ identity: identity.trim(), password });
+ 
       // Show alert on successful login
       alert("Login successful! Redirecting...");
+ 
       // after login, redirect back to requested page (from) or home
       navigate(from, { replace: true });
     } catch (err) {
@@ -57,6 +62,7 @@ export default function Auth() {
   const onSignup = (e) => {
     e.preventDefault();
     setError("");
+ 
     if (!username.trim() || !email.trim() || !password) {
       setError("Please fill all signup fields.");
       return;
@@ -65,11 +71,19 @@ export default function Auth() {
       setError("Please provide a valid email address.");
       return;
     }
+ 
     setLoading(true);
     try {
-      const user = signup({ username: username.trim(), email: email.trim(), password });
+      // perform signup (no need to store return value)
+      signup({
+        username: username.trim(),
+        email: email.trim(),
+        password,
+      });
+ 
       // Show alert on successful signup
       alert("Account created successfully! You are now logged in. Redirecting...");
+ 
       // after signup, redirect back to requested page (from) or home
       navigate(from, { replace: true });
     } catch (err) {
@@ -141,7 +155,11 @@ export default function Auth() {
  
               <div className={styles.small}>
                 New to ReelFlix?{" "}
-                <button type="button" className={styles.linkBtn} onClick={() => switchTo("signup")}>
+                <button
+                  type="button"
+                  className={styles.linkBtn}
+                  onClick={() => switchTo("signup")}
+                >
                   Create an account
                 </button>
               </div>
@@ -152,17 +170,33 @@ export default function Auth() {
  
               <label className={styles.label}>
                 Choose a username
-                <input value={username} onChange={(e) => setUsername(e.target.value)} className={styles.input} placeholder="Visible name" />
+                <input
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className={styles.input}
+                  placeholder="Visible name"
+                />
               </label>
  
               <label className={styles.label}>
                 Email
-                <input value={email} onChange={(e) => setEmail(e.target.value)} className={styles.input} placeholder="you@example.com" />
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={styles.input}
+                  placeholder="you@example.com"
+                />
               </label>
  
               <label className={styles.label}>
                 Password
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className={styles.input} placeholder="Choose a password" />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.input}
+                  placeholder="Choose a password"
+                />
               </label>
  
               <button className={styles.primary} type="submit" disabled={loading}>
@@ -171,7 +205,11 @@ export default function Auth() {
  
               <div className={styles.small}>
                 Already have an account?{" "}
-                <button type="button" className={styles.linkBtn} onClick={() => switchTo("login")}>
+                <button
+                  type="button"
+                  className={styles.linkBtn}
+                  onClick={() => switchTo("login")}
+                >
                   Sign in
                 </button>
               </div>

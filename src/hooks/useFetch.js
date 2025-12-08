@@ -1,44 +1,38 @@
-import { useState, useEffect, useCallback } from "react";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
+ 
 /**
- * Custom hook for fetching data from an API.
- * Supports cleanup, loading state, error handling.
- * Can be used with both REST APIs and GraphQL endpoints.
+ * Custom hook for fetching data using Axios
+ * Automatically manages loading, error, and data states
  */
-const useFetch = (url, options = {}) => {
+ 
+const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-      const result = await response.json();
-      setData(result);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }, [url, options]);
-
+ 
   useEffect(() => {
-    fetchData();
-
-    // Cleanup function
-    return () => {
-      setData(null);
-      setLoading(false);
+    if (!url) return;
+ 
+    const fetchData = async () => {
+      setLoading(true);
       setError(null);
+ 
+      try {
+        const response = await axios.get(url);
+        setData(response.data); // axios stores actual data in response.data
+      } catch (err) {
+        setError(err.message || "Failed to fetch");
+      } finally {
+        setLoading(false);
+      }
     };
-  }, [fetchData]);
-
-  return { data, loading, error, refetch: fetchData };
+ 
+    fetchData();
+  }, [url]);
+ 
+  return { data, loading, error };
 };
-
+ 
 export default useFetch;
+ 

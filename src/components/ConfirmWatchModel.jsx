@@ -1,5 +1,5 @@
 import React from "react";
-import "./Modal.css"; // keep your same CSS file
+import "./Modal.css"; 
  
 function ConfirmWatchModel({ open, onClose, onConfirm, movie }) {
   if (!open) return null;

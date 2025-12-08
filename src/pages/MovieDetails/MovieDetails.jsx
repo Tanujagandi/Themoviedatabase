@@ -102,7 +102,7 @@ export default function MovieDetails() {
         </NavLink>
       </nav>
  
-      {/* NESTED ROUTES */}
+      {/* NESTED ROUTE OUTLET */}
       <div className={styles.outlet}>
         <Outlet context={{ movie }} />
       </div>
